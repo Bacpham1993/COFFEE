@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-segment [(ngModel)]="list" class="tieude">
+      <ion-segment-button value="thucdon" style="font-size:19px;">
+             Thực đơn 
+      </ion-segment-button>
+   
+      <ion-segment-button value="themthucdon" style="font-size:19px;">
+         Thêm thực đơn
+      </ion-segment-button>
+    </ion-segment>
+  </ion-navbar>
+</ion-header>
+<ion-content id="page2">
+
+  <div [ngSwitch]="list">
+    <ion-list *ngSwitchCase="'thucdon'" >
+      <ion-row style="font-size:18px;color:white;border-bottom:2px solid #BDBDBD;background:#fb9678">
+        <ion-col class="cantren" style="text-align:center;">Hình ảnh</ion-col>
+        <ion-col class="cantren" style="margin-left:-15px;">Tên</ion-col>
+        <ion-col style="margin-left:-25px;margin-top:1%;">Tổng SL</ion-col>
+        <ion-col style="margin-left:-15px;margin-top:1%;">Số lượng đã bán</ion-col>
+        <ion-col style="margin-left:-15px;margin-top:1%;">Số lượng còn</ion-col>
+
+      </ion-row>
+        <ion-list style="border-bottom:2px solid #BDBDBD;">
+            <ion-item-sliding *ngFor="let item of listdrinks" style="padding:0px;margin: 0px ">
+              <ion-item style="padding-left:0px">
+                <ion-row style="font-size:17px;">
+                <ion-col>
+                  
+                  <ion-avatar item-start>
+                    <img src="assets/img/cafe.jpg" style="margin-left:40%;">
+                  </ion-avatar>
+                </ion-col>
+                <ion-col class="cantren" >
+                  <h3 style="color:#0099ff;font-size:16px;">{{item.ten}}</h3>
+                  <p>{{item.dongia |currency:'vND':true}}({{item.gianhap|currency:'vND':true}})</p>
+                </ion-col>
+                <ion-col class="cantren">{{item.tongluong}}</ion-col>
+                <ion-col class="cantren">{{item.slcon}}</ion-col>
+                <ion-col class="cantren" style="color:#0099ff;">{{item.tonkho}}</ion-col>
+                </ion-row>
+              </ion-item>
+              
+              <ion-item-options side="right">
+                <button ion-button color="danger" (click)="xoa(item.ten)">
+                  <ion-icon name="trash"></ion-icon>
+                  Xóa
+                </button>
+                <button ion-button color="primary" (click)="sua(item.ten,item.gianhap,item.dongia)">
+                  <ion-icon name="build"></ion-icon>
+                  Sửa
+                </button>
+                <button ion-button color="secondary" (click)="nhap(item.ten,item.tonkho)">
+                  <ion-icon name="add-circle"></ion-icon>
+                  Nhập
+                </button>
+              </ion-item-options>
+            </ion-item-sliding>
+          </ion-list>
+
+    </ion-list>  
+    <ion-list *ngSwitchCase="'themthucdon'" style="padding:-15px;">
+      <div class="themtd">
+        <div class="trai"></div>
+        <div class="frm">
+        
+        <h3 style="color:blue;text-align:center;">Thông tin sản phẩm mới</h3>
+        <form (ngSubmit)="themthucdon()">
+          <ion-item style="border-radius:5px;margin-bottom:10px;">
+            <ion-label color="primary" stacked style="font-size:16px;">Tên sản phẩm:</ion-label>
+            <ion-input type="text" [(ngModel)]="todo.ten" name="ten" autofocus></ion-input>
+          </ion-item>
+          <ion-item style="border-radius:5px;margin-bottom:10px;">
+            <ion-label color="primary" stacked style="font-size:16px;">Giá nhập:</ion-label>
+            <ion-input type="number" [(ngModel)]="todo.gianhap" name="gianhap" min="0" ></ion-input>
+          </ion-item>
+          <ion-item style="border-radius:5px;margin-bottom:10px;">
+            <ion-label color="primary" stacked style="font-size:16px;" >Giá bán:</ion-label>
+            <ion-input type="number" [(ngModel)]="todo.dongia" name="dongia" min="0" ></ion-input>
+          </ion-item>
+          <ion-item style="border-radius:5px;margin-bottom:10px;">
+            <ion-label color="primary" stacked style="font-size:16px;">Số lượng:</ion-label>
+            <ion-input type="number" [(ngModel)]="todo.soluong" name="soluong" min="0" ></ion-input>
+          </ion-item>
+          
+          
+          <img src="{{anh}}" width="100px" height="100px" (click)="chonanh()" style="margin-left:40%;"> Chọn ảnh
+
+          <button ion-button type="submit" block>Thêm thực đơn</button>
+          <button ion-button type="reset" block>Nhập lại</button>
+        </form>
+        
+        
+      
+      
+      </div>
+        
+          
+          
+       
+        <div class="phai"></div>
+      </div>
+    </ion-list>  
+  </div>
+ 
+  
+</ion-content>

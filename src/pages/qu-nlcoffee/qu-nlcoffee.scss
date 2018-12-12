@@ -1,0 +1,210 @@
+page-qu-nlcoffee {
+    margin: 0px;
+    padding: 0px;
+    .row .col-md-8 div .colfoot{
+        margin-top: -25px;
+        margin-right: -40px;
+       
+     
+    }
+	.toolbar-background-md{
+      background: #488aff;
+}
+.toolbar-title-md {
+    color:white;
+}
+.bar-button-menutoggle-md{
+    color:white;
+}
+.card-md{
+    max-width: 30%;
+    float:left;
+    margin-left:1%;
+    margin-right:2%;
+}
+.card-md + ion-card {
+margin-top:10px;
+}
+.hihi:hover{
+ background: #cce6ff;
+ 
+}
+.segment-md .segment-button{
+    text-transform: none;
+}
+.toolbar .segment-md{
+    width: 40%;
+    float: left;
+}
+.row{
+    margin: 0px;
+}
+.chitiettt{
+
+    height:420px;
+
+    background:#eee;
+    overflow: auto;
+}   
+ 
+.tieude{
+    padding-left:20px;
+    color:#cc0000;
+    font-size:16px;
+}  
+.tonghop{
+    text-align:left;
+    color:black;
+    font-size:15px;
+} 
+.tenban{
+    font-weight: bold;
+    background:white;
+    font-size:18px;
+    padding-top:5px;
+    border-bottom:2px solid lightgray;
+    width:100%;
+    min-height:42px;
+    border-top:2px solid#BDBDBD;
+    text-align: center;
+} 
+
+
+.monan:active{
+ background: #cce6ff;
+}
+
+
+.khua:active{.hv{
+   color: blue;
+}}
+.segment-md-primary .segment-button{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0.6;
+}
+.segment-ios-primary .segment-button{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0.6;
+}
+.segment-md-primary .segment-button.segment-activated{
+    border-color: black;
+    color: black;
+    font-weight: bold;
+    opacity: 1;
+}
+@media all and (min-width: 320px){
+    .cottrai{
+        width:100%;
+        background:#eee;
+    }
+    .khua,.monan{
+        width: 45%;
+        margin:2%;
+        background:white;
+        float: left;
+        border-radius: 10px;
+        
+    }
+    .over{
+        width: 90%;
+        height: 23px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        margin: auto;
+        white-space: nowrap;
+    }
+    .cotphai{
+        width: 100%;
+        background:#eee;
+        border:2px solid#BDBDBD;
+    }
+}
+@media all and (min-width: 600px) {
+    .cottrai{
+        width:60%;
+        background:#eee;
+        float: left;
+    }
+    .khua,.monan{
+        width: 30%;
+        margin:1%;
+        background:white;
+        float: left;
+		border-radius: 10px;
+    }
+    .over{
+        width: 90%;
+        height: 23px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        margin: auto;
+        white-space: nowrap;
+    }
+    .cotphai{
+        width: 40%;
+        background:#eee;
+        float: left;
+        border:2px solid#BDBDBD;
+    }
+}
+@media all and (min-width: 1024px) {
+    .cottrai{
+        width: 68%;
+        float: left;
+        background:#eee;
+    }
+    .cotphai{
+        width: 30%;
+        float: left;
+        background:#eee;
+        position:fixed;right:0.1%;
+        border:2px solid#BDBDBD;
+    }
+    .tongcong {
+        position:fixed;
+        bottom:0px;
+        height:30%;
+        width:30%;
+        right:0.1%;
+        border-bottom:2px solid #BDBDBD;
+        border:2px solid#BDBDBD;
+        } 
+        .khungtonghop{
+            
+            position:fixed;
+            bottom:0px;
+            width:30%;
+            right:0.1%;
+            border-bottom:2px solid #BDBDBD;
+            border-left:2px solid#BDBDBD;
+        }
+        .khua{
+            width:17.5%;
+            float:left;
+            margin:1%;
+            background:white;
+			border-radius: 10px;
+        }
+        .monan{
+            width:17.5%;
+            float:left;
+            margin:1%;
+            background:white;
+			border-radius: 10px;
+        }
+        .over{
+            width: 90%;
+            height: 23px;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            margin: auto;
+            white-space: nowrap;
+        }
+}
+@media all and (min-width: 1280px) {}
+  
+}

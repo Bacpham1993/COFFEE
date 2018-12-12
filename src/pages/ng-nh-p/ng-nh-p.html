@@ -1,0 +1,31 @@
+<ion-content padding id="page4"style="background-image: url('assets/img/bg.jpg');">
+  <div class="spacer" style="width:300px;height:48px;" id="NgNhP-spacer3"></div>
+  <div>
+    <img src="assets/img/VPDYpyvbQxixGJtFk6US_Coffee-Logo-Transparent-Background.png" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+  </div>
+  <div class="spacer" style="width:300px;height:25px;" id="NgNhP-spacer2"></div>
+  <form id="NgNhP-form1" (ngSubmit)="login(logindata)">
+    <ion-list id="NgNhP-list2">
+      <ion-item id="NgNhP-input1" style="border-radius:5px">
+        <ion-label stacked style="font-size:16px;">
+          Tên đăng nhập
+        </ion-label>
+        <ion-input type="text" placeholder="" [(ngModel)]="logindata.us" name="us" autofocus></ion-input >
+      </ion-item>
+      <br/>
+      <ion-item id="NgNhP-input2"style="border-radius:5px">
+        <ion-label stacked style="font-size:16px;" >
+          Mật khẩu
+        </ion-label>
+        <ion-input type="password" placeholder="" [(ngModel)]="logindata.pw" name="pw" ></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="height:40px;" id="NgNhP-spacer1"></div>
+    <button id="NgNhP-button1" ion-button color="stable" block style="font-size:16px;">
+          Đăng nhập 
+           <ion-icon ios="ios-log-in" md="md-log-in" style="margin-left:5px;"></ion-icon>
+    </button>
+	
+  </form>
+  <button ion-button outline (click)="signInWithFacebook()">Facebook</button>
+</ion-content>

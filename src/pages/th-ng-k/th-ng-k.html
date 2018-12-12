@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      THỐNG KÊ - BIỂU ĐỒ DOANH THU
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+<ion-card>
+<ion-card-header>
+    BIỂU ĐỒ CHI TIÊU THÁNG {{thang}}
+  </ion-card-header>
+<ion-card-content padding>
+
+ <div style="display:block;">
+  
+    <canvas  baseChart  height="100%"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  
+</div>
+
+</ion-card-content>
+</ion-card>
+</ion-content>

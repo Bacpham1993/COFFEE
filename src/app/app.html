@@ -1,0 +1,43 @@
+<ion-menu [content]="mainContent">
+  <ion-content id="side-menu21" style="    background: -webkit-linear-gradient(#488aff, #500aff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#488aff, #500aff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#488aff, #500aff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#488aff, #500aff); /* Standard syntax */">
+    <div class="spacer" style="width:268px;height:26px;" id="danhMC-spacer4"></div>
+    <div>
+      <img src="{{photoS}}" style="border:5px solid white ;display:block;width:60%;height:auto;margin-left:auto;margin-right:auto;border-radius:50%" />
+    </div>
+    <h2 id="danhMC-heading1" style="color:white;font-weight:400;text-align:center;" >
+      Hi! {{username}}
+    </h2> 
+    <ion-list id="danhMC-list4">
+      <ion-item color="none" menuClose="" on-click="goToQuNLCOFFEE()" id="danhMC-list-item2">
+        <ion-icon name="home" item-left></ion-icon>
+        Trang Chủ
+      </ion-item>
+     
+      <ion-item color="none" menuClose="" on-click="goToThCN()" id="danhMC-list-item4">
+        <ion-icon name="list-box" item-left></ion-icon>
+        Thực Đơn
+      </ion-item>
+	     <ion-item color="none" menuClose="" on-click="gotoNB()" id="danhMC-list-item10">
+        <ion-icon name="log-in" item-left></ion-icon>
+        Nhà Bếp
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="gotoTK()" id="danhMC-list-item5">
+        <ion-icon name="laptop" item-left></ion-icon>
+        Thống Kê
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="gotoNV()" id="danhMC-list-item5">
+        <ion-icon name="laptop" item-left></ion-icon>
+        Nhân viên
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="logout()" id="danhMC-list-item6">
+        <ion-icon name="log-out" item-left></ion-icon>
+        Đăng xuất
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>

@@ -1,0 +1,37 @@
+<ion-header>
+	<ion-navbar>
+    <button ion-button menuToggle>
+		<ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align="center">SUNRISER</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-list *ngFor = "let item of dsban" (click)="chonban(item)"
+	style="float:left;width:128px;height:128px;background:lightseagreen;margin:8px;padding:8px;">
+			<div style="font-size:18px">BÀN {{item}} --</div>
+			<div style="color:#EEE8AA;font-size:15px">[{{today}}]</div>
+	</ion-list>
+	<div style="clear:left;"></div>
+	<ion-item>
+		<div style="background:dodgerblue;padding:8px;">
+			Bàn {{ban}}
+		</div>>
+		<ion-row style='font-weight: bold;border-bottom:solid 1px grey'>
+			<ion-col xs-7>Tên món</ion-col>
+			<ion-col xs-1 align='center'>Số lượng</ion-col>
+			<ion-col xs-3 align='right'>Tiền</ion-col>
+		</ion-row>
+		<ion-row *ngFor = "let ct of linhtinh">
+			<ion-col xs-9 align="left" *ngIf="ct.maban==ban">{{ct.tenmon}}</ion-col>
+			<ion-col xs-1 align='center' *ngIf="ct.maban==ban">{{ct.slmoi}}</ion-col>
+			<ion-col xs-3 align="right" *ngIf="ct.maban==ban" style="font-weight: bold">{{ct.gia}}</ion-col>
+			<ion-col xs-3 align="right" *ngIf="ct.maban==ban" style="font-weight: bold">
+				<button ion-button large clear style="height:20px;padding:0;"
+				(click)="chebien(ct.keys, ct.keysban, ct.sl, ct.maban)">
+					<ion-icon name="checkmark-circle" color="secondary"></ion-icon>
+				</button>
+			</ion-col>      
+		</ion-row>
+	</ion-item>
+</ion-content>

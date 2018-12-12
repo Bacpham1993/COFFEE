@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar >
+    <ion-buttons left>
+      <button ion-button icon-only color="light" (click)="closemodal()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+        Danh mục đồ uống
+    </ion-title>
+
+  </ion-navbar>
+
+  </ion-header>
+<ion-content >
+<ion-list>
+  <ion-item *ngFor="let item of listdrinks" (click)="them(item.ten,item.dongia,item.nhom)">
+    <ion-thumbnail item-start>
+      <img src="{{item.hinhanh}}">
+    </ion-thumbnail>
+    <h2>{{item.ten}}</h2>
+    <p>{{item.dongia}}</p>
+    <button ion-button clear item-end>THÊM</button>
+  </ion-item>
+</ion-list>
+
+
+</ion-content>

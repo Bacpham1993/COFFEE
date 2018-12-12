@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar >
+    <ion-buttons left>
+      <button ion-button icon-only color="light" (click)="closemodal()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+        Chuyển bàn
+    </ion-title>
+
+  </ion-navbar>
+
+  </ion-header>
+<ion-content >
+<ion-list>
+  <ion-item>
+    <ion-label>Từ bàn</ion-label>
+    <ion-select [(ngModel)]="tb">  
+      <ion-option name="tb"   *ngFor="let item of soban"  value="{{item.ID}}">{{item.ID}}</ion-option>
+    </ion-select>
+
+  </ion-item>
+<ion-item>
+      <ion-label>Qua bàn</ion-label>
+    <ion-select [(ngModel)]="tb2" > 
+      <ion-option name="tb2" *ngFor="let item1 of soban"  value="{{item1.ID}}">{{item1.ID}}</ion-option>
+    </ion-select>
+    </ion-item>
+</ion-list>
+<div style="text-align:center">
+<button ion-button icon-left style="margin-left:10px;margin-top:10px" (click)="chuyenban(tb,tb2)" color="danger">
+  <ion-icon name="move"></ion-icon>
+  Chuyển
+</button>
+</div>
+</ion-content>

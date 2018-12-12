@@ -1,0 +1,146 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align="center">SUNRISER</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Kéo xuống để tải lại"
+      refreshingSpinner="circles"
+      refreshingText="Đang tải dữ liệu...">
+    </ion-refresher-content>
+  </ion-refresher>
+<!--
+<div id="printSectionId" >
+  <div>
+    <h1>AngularJS Print html templates</h1>
+    <form novalidate>
+      First Name:
+      <input type="text"  class="tb8">
+      <br>
+      <br> Last Name:
+      <input type="text"  class="tb8">
+      <br>
+      <br>
+      <button  class="button">Submit</button>
+      <button (click)="printToCart('printSectionId')" class="button">Print</button>
+    </form>
+  </div>
+  <div>
+    <br/>
+   </div>
+</div>
+-->
+  <div *ngIf="emptys!=0; else khongtrong">
+
+<ion-card>
+<ion-card-header class='sectwo'  >
+
+    <div style="font-size:18px">HÔM NAY</div>
+	<div style="color:#EEE8AA;font-size:15px">[{{today}}]</div>
+  </ion-card-header>
+<ion-card-content padding>
+<ion-item>
+ <ion-row style='font-weight: bold;border-bottom:solid 1px grey'>
+	  <ion-col xs-1>STT</ion-col>
+	  <ion-col xs-7>Tên món</ion-col>
+	  <ion-col xs-1 align='center'>Số lượng</ion-col>
+	  <ion-col xs-3 align='right'>Tiền</ion-col>
+	  </ion-row>
+	  </ion-item>
+  <ion-list *ngFor = "let x of ngaynhap" >
+     <ion-item>
+	 
+    <ion-row style='border-bottom:dashed 1px grey'>
+	  <ion-col xs-1>{{x.STT}}</ion-col>
+	  <ion-col xs-7>{{x.Douong}}</ion-col>
+	  <ion-col xs-1 align='center'>{{x.SoLuong}}</ion-col>
+	  <ion-col xs-3 align='right'>{{x.TongGia |number:'.0-2'}}</ion-col>
+	  </ion-row>
+	  </ion-item>
+	 	   
+</ion-list>
+     <ion-item>
+	 
+    <ion-row>
+	  <ion-col xs-9 align="left"></ion-col>
+	 <ion-col xs-3 align="right" style="font-weight: bold">Tổng: {{tongngay|number:'.0-2'}}</ion-col>
+	  </ion-row>
+	  </ion-item>
+
+</ion-card-content>
+</ion-card> 
+</div>
+<ng-template #khongtrong>
+<ion-card >
+<ion-card-header class='sectwo'  >
+
+    <div style="font-size:18px">HÔM NAY</div>
+	<div style="color:#EEE8AA;font-size:15px">{{today}}</div>
+  </ion-card-header>
+<ion-card-content padding>
+      <p align="center">(!) Chưa có thu chi nào trong hôm nay</p>
+</ion-card-content>
+</ion-card>
+</ng-template> 
+ <ion-slides initialSlide = "{{slideMonth}}" (ionSlideDidChange)="slideChanged()">
+  <ion-slide *ngFor="let tn of ThangNam">
+  <h1>THÁNG {{tn}}</h1>
+	<ion-card >
+<ion-card-header class='cards-list-demo'>
+<ion-row>
+
+<ion-col xs-7>TỔNG QUAN CHI TIÊU</ion-col>
+<ion-col xs-5 align='right'> <button large type="button" class="btn btn-success btn-lg" (click)="pushThongKe(tn)">Xem biểu đồ</button> </ion-col>
+</ion-row>
+  </ion-card-header>
+<ion-card-content padding>
+<ion-item>
+<ion-row>
+<ion-col xs-7>Doanh thu</ion-col>
+<ion-col xs-5 align='right'> {{tongthu |number:'.0-2'}} </ion-col>
+</ion-row>
+
+<ion-row>
+<ion-col xs-7>Tổng chi</ion-col>
+<ion-col xs-5 align='right'> {{tongchi |number:'.0-2'}} </ion-col>
+</ion-row>
+
+<ion-row>
+<ion-col xs-7>Lợi nhuận</ion-col>
+<div *ngIf="sautru>=0; else elseBlock">
+<ion-col xs-5 align='right' style='border-top:grey solid 1px;color:blue'> {{sautru |number:'.0-2'}} </ion-col>
+</div>
+<ng-template #elseBlock>
+<ion-col xs-5 align='right' style='border-top:grey solid 1px;color:red'> {{sautru |number:'.0-2'}} </ion-col>
+</ng-template>
+</ion-row>
+</ion-item>
+
+
+</ion-card-content>
+</ion-card>
+
+<!-- Phan moi --> 
+
+
+
+
+  </ion-slide>
+
+</ion-slides>
+
+ 
+ <!-- <ion-fab center bottom>
+    <button ion-fab color="" [navPush]="pushPage"><ion-icon md="md-add-circle"></ion-icon></button>
+ 
+  </ion-fab>
+  -->
+</ion-content>

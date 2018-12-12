@@ -1,0 +1,66 @@
+page-th-cn {
+.label-md {
+    margin: 0;
+     
+}
+.cantren{
+    margin-top:1%; 
+    
+}
+.segment-md .segment-button{
+    text-transform: none;
+    color: black;
+}
+.toolbar .segment-md{
+    width: 35%;
+    float: left;
+}
+.segment-md .segment-button.segment-activated{
+    border-color: black; 
+}
+.row{
+    margin: 0;
+}
+.row:hover{
+    background: #A9E2F3;
+    color: white;
+}
+
+.themtd{
+    width: 100%;
+    color: #333;
+}
+
+.trai{
+    width: 22%;
+    min-height: 600px;
+    background-image: url(../../assets/img/bg2.jpg);
+    float: left;
+    margin-top: -1%;
+    opacity: 0.8;
+}
+.phai{
+    width: 22%;
+    min-height: 600px;
+    background-image: url(../../assets/img/bg2.jpg);
+    float: right;
+    margin-top: -1%;
+    opacity: 0.8;
+}
+.frm{
+    width:56%;
+    margin: auto;
+    float: left;
+    padding-top: 1%;
+    line-height: 25px;
+    font-size: 17px;
+    
+    min-height: 600px;
+    background: #eee;
+    margin-top: -1%;
+    opacity: 0.9;
+}
+
+
+
+}

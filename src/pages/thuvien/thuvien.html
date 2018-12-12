@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Thư viện
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+  <div class="themtd">
+    <div class="trai"></div>
+    <div class="frm">
+      <div class="khung">
+        <h3 style="color:blue;text-align:center;">Chọn ảnh</h3>
+        <form *ngFor="let item of imagelist">
+            <img src="{{item.url}}" style="float:left;width:120px;height:120px;margin:4px;" (click)="chonanh(item.url)">
+	    </form>
+      </div>
+    </div>
+  </div>
+</ion-content>

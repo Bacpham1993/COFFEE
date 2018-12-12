@@ -1,0 +1,63 @@
+<ion-header>
+	<ion-navbar>
+    <button ion-button menuToggle>
+		<ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align="center">SUNRISER</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<div>
+		<ion-segment [(ngModel)]="list">
+			<ion-segment-button value="nv">
+				Nhân viên
+			</ion-segment-button>
+			<ion-segment-button value="dg">
+				Đánh giá nhân viên
+			</ion-segment-button>
+		</ion-segment>
+	</div>
+	<div>
+		<button ion-button color="primary" (click)="them()">
+			<ion-icon name="new"></ion-icon>
+			Sửa
+		  </button>
+	</div>
+	<div [ngSwitch]="list">
+		<ion-list *ngSwitchCase="'nv'">
+			<ion-item>
+				<ion-row *ngFor="let item1 of bannhabep" style="background:royalblue;margin:8px 0px;">
+					<ion-col xs-5 (click)="chonnv(item1.username)">
+						{{item1.username}}
+					</ion-col>
+					<ion-col xs-2>
+				  		<button ion-button color="danger" (click)="xoa(item1.username, item1.key)">
+							<ion-icon name="trash"></ion-icon>
+							Xóa
+				  		</button>
+					</ion-col>
+					<ion-col xs-2>
+				  		<button ion-button color="primary" (click)="sua(item1.username, item1.key)">
+							<ion-icon name="build"></ion-icon>
+							Sửa
+				  		</button>
+					</ion-col>
+				</ion-row>
+			</ion-item>
+		</ion-list>
+	
+		<ion-list *ngSwitchCase="'dg'">
+			<div>
+				{{nv.username}}: {{role[nv.vitri]}} <br>
+				Tổng điểm: {{solanthanhtoan}}
+			</div>
+			<ion-item>
+				<div *ngFor="let item2 of linhtinh">
+					<div *ngIf="item2.username==nv.username">
+						Đánh giá: {{item2.diem}} của bàn {{item2.maban}} vào lúc {{item2.thoigian}}
+					</div>
+				</div>
+			</ion-item>
+		</ion-list>
+	</div>
+<ion-content>

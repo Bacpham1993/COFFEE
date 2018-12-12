@@ -1,0 +1,27 @@
+page-hello-ionic {
+ion-card-header.cards-list-demo{
+  color: white;
+  border-bottom: grey dashed 1px;
+  background-color: map-get($colors, primary);
+  text-align: left;
+  
+}
+.sectwo{
+color:white;
+border-bottom:grey solid 1px;
+
+  background-color: #2F4F4F;
+text-align: left;
+}
+ion-slide {
+  align-items: flex-start !important;
+  autoheight:true;
+  display:none;
+   
+}
+.row{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+}
